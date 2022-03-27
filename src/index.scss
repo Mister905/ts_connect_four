@@ -1,0 +1,123 @@
+body {
+  background: #000;
+}
+
+td {
+  padding: 0px !important;
+}
+
+tr {
+  border-bottom: 0px !important;
+}
+
+.game_cell {
+  height: 70px;
+  background-color: #175bda;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.white_circle,
+.red_circle,
+.yellow_circle {
+  height: 60px;
+  width: 60px;
+  border-radius: 100px;
+}
+
+.white_circle {
+  background-color: #fff;
+}
+
+.red_circle {
+  background-color: rgb(251, 42, 42);
+  transition: background-color 0.5s;
+}
+
+.yellow_circle {
+  background-color: rgb(243, 239, 20);
+  transition: background-color 0.5s;
+}
+
+.white-text {
+  color: #fff;
+}
+
+.game-status-col {
+  color: #fff;
+}
+
+.board-col {
+  padding: 0px !important;
+}
+
+.game-status-heading {
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
+.mt-25 {
+  margin-top: 25px !important;
+}
+
+.mb-0 {
+  margin-bottom: 0px !important;
+}
+
+.btn-player {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.wrapper {
+  display: inline-block;
+}
+
+.block {
+  display: inline-block;
+  white-space: normal;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.red {
+  background: #ea3836;
+  height: 200px;
+}
+.green {
+  background: #38ab36;
+  height: 10em;
+}
+
+.player-container {
+  display: flex;
+  justify-content: center;
+}
+
+.player-marker-btn {
+  margin-left: 5px;
+  margin-top: 2px;
+}
+
+.arrow {
+  margin-left: 5px;
+}
+
+.game-font {
+  font-family: "Press Start 2P", cursive;
+}
+
+.btn-new-game {
+  background: #175bda !important;
+}
+
+.current-player-arrow-container {
+  height: 29.7px;
+  width: 29px;
+}
+
+.message-output {
+  margin-top: 10px;
+}

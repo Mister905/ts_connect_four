@@ -1,9 +1,17 @@
-import React from 'react'
+import Cell from "../cell/Cell";
 
-function Row() {
-  return (
-    <div>Row</div>
-  )
+interface I_props {
+  row: number[] | null[];
 }
 
-export default Row
+function Row({ row }: I_props) {
+  return (
+    <tr>
+      {row.map((cell, i) => (
+        <Cell key={i} value={cell} column_index={i} />
+      ))}
+    </tr>
+  );
+}
+
+export default Row;

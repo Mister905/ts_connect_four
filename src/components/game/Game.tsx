@@ -1,12 +1,19 @@
-import React from "react";
 import Row from "../row/Row";
-import Column from "../column/Column";
+import { useAppSelector } from "../../store/hooks";
 
 function Game() {
+  
+  const board = useAppSelector((state) => state.game.board);
+
   return (
     <div>
-      <Row />
-      <Column />
+      <table>
+        <tbody>
+          {board.map((row, i) => {
+            return <Row key={i} row={row} />;
+          })}
+        </tbody>
+      </table>
     </div>
   );
 }
