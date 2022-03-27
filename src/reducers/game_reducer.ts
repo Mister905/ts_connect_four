@@ -5,7 +5,7 @@ interface I_initial_state {
   player_1: number;
   player_2: number;
   current_player: number;
-  board: number[][] | null[][];
+  board: (number[] | null[])[];
   game_over: boolean;
   message: string;
 }
@@ -32,22 +32,28 @@ export default function (
 ): I_initial_state {
   switch (action.type) {
     case Action_Type.NEW_GAME:
+      return initial_state;
+
+    case Action_Type.TOGGLE_PLAYER:
       return {
-        player_1: 1,
-        player_2: 2,
-        current_player: 1,
-        board: [
-          [null, null, null, null, null, null, null],
-          [null, null, null, null, null, null, null],
-          [null, null, null, null, null, null, null],
-          [null, null, null, null, null, null, null],
-          [null, null, null, null, null, null, null],
-          [null, null, null, null, null, null, null],
-        ],
-        game_over: false,
-        message: "",
+        ...state,
+        current_player: action.current_player,
+        board: action.board,
       };
 
+    case Action_Type.UPDATE_MESSAGE:
+      return {
+        ...state,
+        message: action.message,
+      };
+
+    case Action_Type.END_GAME:
+      return {
+        ...state,
+        game_over: true,
+        message: action.message,
+        board: action.board,
+      };
     default:
       return state;
   }

@@ -10,7 +10,7 @@ tr {
   border-bottom: 0px !important;
 }
 
-.game_cell {
+.game-cell {
   height: 70px;
   background-color: #175bda;
   cursor: pointer;
@@ -19,24 +19,24 @@ tr {
   display: flex;
 }
 
-.white_circle,
-.red_circle,
-.yellow_circle {
+.white-circle,
+.red-circle,
+.yellow-circle {
   height: 60px;
   width: 60px;
   border-radius: 100px;
 }
 
-.white_circle {
+.white-circle {
   background-color: #fff;
 }
 
-.red_circle {
+.red-circle {
   background-color: rgb(251, 42, 42);
   transition: background-color 0.5s;
 }
 
-.yellow_circle {
+.yellow-circle {
   background-color: rgb(243, 239, 20);
   transition: background-color 0.5s;
 }

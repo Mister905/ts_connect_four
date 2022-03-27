@@ -5,10 +5,11 @@ interface I_props {
 }
 
 function Row({ row }: I_props) {
+  
   return (
     <tr>
       {row.map((cell, i) => (
-        <Cell key={i} value={cell} column_index={i} />
+        <Cell key={i} value={cell} cell_index={i} />
       ))}
     </tr>
   );

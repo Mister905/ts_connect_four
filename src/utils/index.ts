@@ -1,8 +1,4 @@
-let sum = (x: number, y: number): number => {
-  return x + y;
-};
-
-export const check_vertical = (board: number[][]): number | null => {
+export const check_vertical = (board: (number[] | null[])[]): number | null => {
   // Check only if row is 3 or greater
   for (let r = 3; r < 6; r++) {
     for (let c = 0; c < 7; c++) {
@@ -20,7 +16,9 @@ export const check_vertical = (board: number[][]): number | null => {
   return null;
 };
 
-export const check_horizontal = (board: number[][]): number | null => {
+export const check_horizontal = (
+  board: (number[] | null[])[]
+): number | null => {
   // Check only if column is 3 or less
   for (let r = 0; r < 6; r++) {
     for (let c = 0; c < 4; c++) {
@@ -38,7 +36,9 @@ export const check_horizontal = (board: number[][]): number | null => {
   return null;
 };
 
-export const check_diagonal_right = (board: number[][]): number | null => {
+export const check_diagonal_right = (
+  board: (number[] | null[])[]
+): number | null => {
   // Check only if row is 3 or greater AND column is 3 or less
   for (let r = 3; r < 6; r++) {
     for (let c = 0; c < 4; c++) {
@@ -56,7 +56,9 @@ export const check_diagonal_right = (board: number[][]): number | null => {
   return null;
 };
 
-export const check_diagonal_left = (board: number[][]): number | null => {
+export const check_diagonal_left = (
+  board: (number[] | null[])[]
+): number | null => {
   // Check only if row is 3 or greater AND column is 3 or greater
   for (let r = 3; r < 6; r++) {
     for (let c = 3; c < 7; c++) {
@@ -74,7 +76,7 @@ export const check_diagonal_left = (board: number[][]): number | null => {
   return null;
 };
 
-export const check_draw = (board: number[][]): string | null => {
+export const check_draw = (board: (number[] | null[])[]): string | null => {
   for (let r = 0; r < 6; r++) {
     for (let c = 0; c < 7; c++) {
       if (board[r][c] === null) {
@@ -85,7 +87,9 @@ export const check_draw = (board: number[][]): string | null => {
   return "draw";
 };
 
-export const check_for_win = (board: number[][]) => {
+export const check_for_win = (
+  board: (number[] | null[])[]
+): number | string | null => {
   return (
     check_vertical(board) ||
     check_diagonal_right(board) ||

@@ -1,12 +1,18 @@
 import { useAppSelector } from "../../store/hooks";
 import { useDispatch } from "react-redux";
+import { new_game } from "../../action_creators/game_actions";
 
 function Status() {
+
   const dispatch = useDispatch();
 
   const current_player = useAppSelector((state) => state.game.current_player);
 
   const message = useAppSelector((state) => state.game.message);
+
+  function handle_new_game() {
+    dispatch(new_game());
+  }
 
   return (
     <div className="row">
@@ -61,12 +67,7 @@ function Status() {
           <div className="col m12 center-align">
             <button
               className="waves-effect waves-light btn game-font btn-new-game"
-              onClick={() => {
-                dispatch({
-                  type: "new_game",
-                  // board: generate_new_board(),
-                });
-              }}
+              onClick={() => handle_new_game()}
             >
               New Game
             </button>
